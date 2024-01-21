@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Service Providers Search</title>
+    <style>
+        /* Add your styles here */
+    </style>
+</head>
+<body>
+    <label for="location">Location:</label>
+    <input type="text" id="location" placeholder="Enter location">
+
+    <label for="services">Services:</label>
+    <input type="text" id="services" placeholder="Enter services">
+
+    <button onclick="searchServiceProviders()">Search</button>
+
+    <div id="results"></div>
+
+    <script>
+        function searchServiceProviders() {
+            const location = document.getElementById('location').value;
+            const services = document.getElementById('services').value;
+
+            // Make an AJAX request to the server with location and services parameters
+            // Display the results in the 'results' div
+            // This can be done using fetch() or XMLHttpRequest
+        }
+    </script>
+</body>
+</html>

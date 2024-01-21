@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HomeHelpHub</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    
+
+    
+    #chat-container {
+      max-width: 600px;
+      margin: 20px auto;
+      border: 1px solid #ccc;
+      padding: 10px;
+    }
+
+    #messages {
+      height: 200px;
+      overflow-y: scroll;
+      border-bottom: 1px solid #ccc;
+    }
+
+    #message-input {
+      width: 70%;
+      padding: 10px;
+    }
+
+    #send-button {
+      padding: 10px;
+      background-color: #4CAF50;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+
+
+  
+
+ 
+  <div id="chat-container">
+    <div id="messages"></div>
+    <input type="text" id="message-input" placeholder="Type your message...">
+    <button id="send-button">Send</button>
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+  <script>
+
+
+const socket = new WebSocket('ws://localhost:8080/chat');
+
+
+socket.addEventListener('message', (event) => {
+    console.log('Message from server:', event.data);
+    
+});
+
+
+function sendMessage(message) {
+    socket.send(message);
+}
+
+    $(document).ready(function () {
+      const socket = new WebSocket('ws://your-websocket-server');
+
+      socket.onmessage = function (event) {
+        const message = JSON.parse(event.data);
+        $('#messages').append(`<div>${message.sender}: ${message.text}</div>`);
+      };
+
+      $('#send-button').click(function () {
+        const messageText = $('#message-input').val();
+        const message = {
+          sender: 'User', 
+          text: messageText
+        };
+        socket.send(JSON.stringify(message));
+        $('#messages').append(`<div>You: ${messageText}</div>`);
+        $('#message-input').val('');
+      });
+    });
+  </script>
+</body>
+</html>

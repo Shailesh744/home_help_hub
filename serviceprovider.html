@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Service Providers</title>
+    <!-- Add Bootstrap CSS link -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        /* Your existing styles here */
+
+        /* Add a new style for the modal */
+        .modal-content {
+            padding: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <section class="provider-explorer-section">
+        <h2>Explore Service Providers</h2>
+        <div class="modal fade" id="reviewModal" tabindex="-1" role="dialog" aria-labelledby="reviewModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <h2>Leave a Review and Rating</h2>
+                    <form id="review-form">
+                        <label for="username">Your Name:</label>
+                        <input type="text" id="username" required>
+                        <label for="rating">Rating:</label>
+                        <select id="rating" required>
+                            <option value="5">5 Stars</option>
+                            <option value="4">4 Stars</option>
+                            <option value="3">3 Stars</option>
+                            <option value="2">2 Stars</option>
+                            <option value="1">1 Star</option>
+                        </select>
+                        <label for="comment">Your Review:</label>
+                        <textarea id="comment" required></textarea>
+                        <button type="button" class="btn btn-primary" onclick="addReview()">Submit Review</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="provider">
+            <img src="cleaning_services.jpg" width="500" alt="Service Provider 1">
+            <h3>Aman's Cleaning Services</h3>
+            <p>Experienced in residential and commercial cleaning.</p>
+            <a href="#aman-profile" class="view-profile">View Profile</a>
+            <button class="btn btn-success rate-button" data-toggle="modal" data-target="#reviewModal">Rate</button>
+        </div>
+        <div class="provider">
+            <img src="plumbing_service.jpg" width="500" alt="Service Provider 2">
+            <h3>Anuarg's Plumbing Solutions</h3>
+            <p>Specializing in plumbing repairs and installations.</p>
+            <a href="#anuarg-profile" class="view-profile">View Profile</a>
+            <button class="btn btn-success rate-button" data-toggle="modal" data-target="#reviewModal">Rate</button>
+        </div>
+        <div class="provider">
+            <img src="eletrical.jpg.jpg" width="500" alt="Service Provider 3">
+            <h3>Pankaj's Electric Services</h3>
+            <p>Electrical solutions for residential and commercial clients.</p>
+            <a href="#pankaj-profile" class="view-profile">View Profile</a>
+            <button class="btn btn-success rate-button" data-toggle="modal" data-target="#reviewModal">Rate</button>
+        </div>
+    </section>
+
+    <!-- Profiles Section -->
+    <section class="profile-section">
+        <div id="aman-profile" class="profile">
+            <img src="cleaning_services.jpg" width="500" alt="Aman's Cleaning Services">
+            <h3>Aman's Cleaning Services</h3>
+            <p>Biodata: Placeholder for Aman's biodata information.</p>
+        </div>
+        <div id="anuarg-profile" class="profile">
+            <img src="plumbing_service.jpg" width="600" alt="Anuarg's Plumbing Solutions">
+            <h3>Anuarg's Plumbing Solutions</h3>
+            <p>Biodata: Placeholder for Anuarg's biodata information.</p>
+        </div>
+        <div id="pankaj-profile" class="profile">
+            <img src="eletrical.jpg.jpg" width="600" alt="Pankaj's Electric Services">
+            <h3>Pankaj's Electric Services</h3>
+            <p>Biodata: Placeholder for Pankaj's biodata information.</p>
+        </div>
+    </section>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <!-- Add Bootstrap JS and Popper.js scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <script>
+        document.querySelectorAll('.provider .rate-button').forEach(function (button) {
+            button.addEventListener('click', function () {
+                $('#reviewModal').modal('show');
+            });
+        });
+
+        // Your existing code for displaying profiles
+        document.querySelectorAll('.provider a.view-profile').forEach(function (link) {
+            link.addEventListener('click', function (event) {
+                event.preventDefault();
+                var targetProfileId = this.getAttribute('href');
+                document.querySelectorAll('.profile').forEach(function (profile) {
+                    profile.style.display = 'none';
+                });
+                document.querySelector(targetProfileId).style.display = 'block';
+            });
+        });
+
+        // Your existing code for the review and rating system
+        function addReview() {
+            // Your existing code for adding reviews
+        }
+    </script>
+</body>
+
+</html>

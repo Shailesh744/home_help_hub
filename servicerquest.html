@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Explore Our Services</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <style>
+        /* Custom styles */
+        .services-section {
+            text-align: center;
+            margin: 40px 0;
+        }
+
+        .service-category {
+            margin: 20px;
+        }
+
+        .service-category img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+        }
+
+        .service-category h3 {
+            margin: 10px 0;
+        }
+
+        .service-category p {
+            margin-bottom: 10px;
+        }
+
+        .book-now-btn {
+            background-color: #28a745;
+            color: #fff;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <section class="services-section">
+            <h2>Explore Our Services</h2>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="service-category">
+                        <img src="cleaning_services.jpg" alt="Cleaning Icon">
+                        <h3>Cleaning</h3>
+                        <p>Professional cleaning services for a spotless home.</p>
+                        <p><strong>Price:</strong> $50/hour</p>
+                        <button class="btn btn-success book-now-btn" data-toggle="modal" data-target="#serviceRequestModal"
+                            data-service="Cleaning">Book Now</button>
+                        <p class="description">Our cleaning service includes thorough cleaning of all rooms, dusting, vacuuming, and more. We ensure a spotless and hygienic home for you and your family.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="service-category">
+                        <img src="plumbing_service.jpg" alt="Plumbing Icon">
+                        <h3>Plumbing</h3>
+                        <p>Skilled plumbers for all your plumbing needs.</p>
+                        <p><strong>Price:</strong> $80/hour</p>
+                        <p><button class="btn btn-success book-now-btn" data-toggle="modal" data-target="#serviceRequestModal" data-service="Plumbing">Book Now</button></p>
+                        <p class="description">Our plumbing service includes fixing leaks, unclogging drains, and installation of plumbing fixtures. We provide efficient and reliable plumbing solutions.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="service-category">
+                        <img src="gardening_image.jpg" alt="Gardening Icon">
+                        <h3>Gardening</h3>
+                        <p>Transform your garden with our expert gardening services.</p>
+                        <p><strong>Price:</strong> $60/hour</p>
+                        <p><button class="btn btn-success book-now-btn" data-toggle="modal" data-target="#serviceRequestModal" data-service="Gardening">Book Now</button></p>
+                        <p class="description">Our gardening service includes landscaping, planting, and maintenance of gardens. We create beautiful outdoor spaces tailored to your preferences.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="service-category">
+                        <img src="eletrical.jpg.jpg" alt="Electrical Icon">
+                        <h3>Electrical</h3>
+                        <p>Qualified electricians for all your electrical requirements.</p>
+                        <p><strong>Price:</strong> $70/hour</p>
+                        <p><button class="btn btn-success book-now-btn" data-toggle="modal" data-target="#serviceRequestModal" data-service="Electrical">Book Now</button></p>
+                        <p class="description">Our electrical service includes wiring, installation of electrical appliances, and troubleshooting. We ensure safe and reliable electrical solutions for your home or business.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="service-category">
+                        <img src="painter.jpg" alt="Painting Icon">
+                        <h3>Painting</h3>
+                        <p>Bring color to your home with our professional painting services.</p>
+                        <p><strong>Price:</strong> $90/hour</p>
+                        <p><button class="btn btn-success book-now-btn" data-toggle="modal" data-target="#serviceRequestModal" data-service="Painting">Book Now</button></p>
+                        <p class="description">Our painting service includes interior and exterior painting, color consultation, and surface preparation. We provide high-quality painting to enhance the beauty of your living spaces.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Service Request Modal -->
+    <div class="modal fade" id="serviceRequestModal" tabindex="-1" role="dialog" aria-labelledby="serviceRequestModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="serviceRequestModalLabel">Service Request</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form id="serviceRequestForm">
+                        <input type="hidden" id="selectedService" name="selectedService" value="">
+                        <div class="form-group">
+                            <label for="userName">Your Name:</label>
+                            <input type="text" class="form-control" id="userName" name="userName" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="userEmail">Your Email:</label>
+                            <input type="email" class="form-control" id="userEmail" name="userEmail" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="userContact">Your Contact Number:</label>
+                            <input type="tel" class="form-control" id="userContact" name="userContact" required>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Submit Request</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS and jQuery -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+    <script>
+        // JavaScript to set selected service when modal is shown
+        $('#serviceRequestModal').on('show.bs.modal', function (event) {
+            var button = $(event.relatedTarget);
+            var service = button.data('service');
+            var modal = $(this);
+            modal.find('#selectedService').val(service);
+            // Update modal content based on the selected service
+            modal.find('.modal-title').text('Service Request for ' + service);
+        });
+
+        // JavaScript to handle form submission
+        $('#serviceRequestForm').submit(function (event) {
+            event.preventDefault();
+            // Retrieve form data
+            var selectedService = $('#selectedService').val();
+            var userName = $('#userName').val();
+            var userEmail = $('#userEmail').val();
+            var userContact = $('#userContact').val();
+            // Process or send the data (you can replace this with your logic)
+            console.log('Service Request:', {
+                service: selectedService,
+                name: userName,
+                email: userEmail,
+                contact: userContact
+            });
+            // Close the modal
+            $('#serviceRequestModal').modal('hide');
+        });
+    </script>
+</body>
+
+</html>
